@@ -16,7 +16,7 @@ def book(request, product_id):
     return render(request, 'books/book.html', locals())
 
 def home(request):
-    book_images = Book.image
+    book_images = Book.objects.all()
 
 
     return render(request, 'home.html', locals())

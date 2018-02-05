@@ -21,29 +21,41 @@
 
 <link rel="blog" type="application/rss+xml" title="Блог веб-студии BYTEHOUSE" href="bytehouse.ru/blog/feed/">
 <body>
-    {% for author in authors%}
-
-      {{author.name}}<br />
-      {{author.surname}}<br />
-      {{author.patronymic}}<br />
-      {{author.phone}}<br />
-      {{author.email}}<br />
 
 
 
+    <input  type="text" onkeyup="myFunction()" id="myInput" placeholder="Search fo names">
+    <ul id = "myUL">
+         {% for author in authors%}
+
+              <a class="btn btn-default" href="{% url 'author_edit' pk=author.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+
+
+            <li><a href="">{{author.name}}</a></li>
+                <li><a href="">{{author.surname}}</a></li>
+                <li><a href="">{{author.patronymic}}</a></li>
+                <li><a href="">{{author.phone}}</a></li>
+                <li><a href="">{{author.email}}</a></li>
 
 
 
+        {%endfor%}
 
 
-    {%endfor%}
+
+    </ul>
+
+      <a class="btn btn-default" href="{% url 'tag'  %}"> Добавить</a>
+
+
+
 
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+     <script src="{% static 'js/scripts.js' %}"></script>
 
 </body>
 </html>

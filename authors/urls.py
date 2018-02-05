@@ -5,5 +5,9 @@ from . import views
 urlpatterns = [
     url(r'^authors/', views.authors, name='authors'),
 
-    url(r'^tag/', views.tag, name='tag')
+    url(r'^author/(?P<pk>[0-9]+)/$', views.author_edit, name="author_edit"),
+
+
+    url(r'^tag/', views.tag, name='tag'),
+
     ]
